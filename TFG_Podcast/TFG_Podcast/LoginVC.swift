@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIWebViewDelegate {
 
+    @IBOutlet var loginWebView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let url = URL(string: "https://www.hackingwithswift.com")!
+        loginWebView.load(URLRequest(url: url))
+        loginWebView.allowsBackForwardNavigationGestures = true
     }
 
 
